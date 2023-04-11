@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+    <H1 id="title">Name: chaman Ali</H1>
+    <p></p>
+    <ul></ul>
+
+
+
+    <SCRipt defer>
+
+        // QUESTION NUMBER 1
+        function addNum(num) {
+            return function(x) {
+                return x + num;
+            }
+        }
+
+        let addFive = addNum(5);
+
+        console.log(addFive(2)); // Output: 7
+        console.log(addFive(10)); // Output: 15
+
+
+
+        // question number 2 
+        function searchArray(array, key){
+            if(array[0]===key){
+                return true;
+            }
+            else{
+                return searchArray(array.slice(1), key)
+            }
+        }
+
+        const marks = [40,90,50,68,45,75]
+        console.log(searchArray(marks, 50)) // true
+        // console.log(searchArray(marks, 3)) // false
+
+        // question number 3 
+        function addParagraph(text) {
+        // create a new paragraph element
+            let newpara = document.createElement("p");
+            let msg = document.createTextNode(text);
+            newpara.appendChild(msg)
+            document.body.appendChild(newpara)
+            
+        }
+
+        addParagraph("Hello my name is Chaman and this paragraph is added at the end.")
+        
+        // questions number 4 
+        function addListItem(text) {
+        // Get the unordered list element
+        let list = document.querySelector('ul');
+
+        // Create a new list item element
+        let newItem = document.createElement('li');
+        newItem.textContent = text;
+
+        // Append the new list item to the unordered list
+        list.appendChild(newItem);
+        }
+
+        addListItem('Bananas');
+
+
+        // quesition number 5
+        let para = document.getElementById("title")
+    
+        function changeBackgroundColor(para, newColor) {
+            para.style.backgroundColor = newColor;
+        }
+
+        changeBackgroundColor(para, "blue");
+
+        // question number 6 
+        function saveObjectToLocal(key, obj) {
+            localStorage.setItem(key, JSON.stringify(obj));
+        }
+
+        function saveObjectFromLocalStorage(key){
+            const storedObject = localStorage.getItem(key)
+            return JSON.parse(storedObject)
+        }
+        //Example usage
+        const myObj = {
+        name: "Chaman Ali",
+        age: 27,
+        city: "Quetta"
+        };
+
+        saveObjectToLocal("myObj", myObj);
+
+
+</SCRipt>
+</body>
+</html>
